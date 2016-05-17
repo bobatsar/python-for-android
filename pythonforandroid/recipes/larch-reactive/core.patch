@@ -1,0 +1,17 @@
+diff -Naur larch/reactive/core.py larch/reactive/core1.py
+--- reactive/larch/reactive/core.py	2016-05-14 15:03:08.040026679 +0200
++++ larch/reactive/core1.py	2016-05-14 15:05:28.800027048 +0200
+@@ -8,6 +8,13 @@
+     if getattr(sys, "larch_reactive", "cython") != "cython":
+         raise ImportError()
+
++    import ctypes
++    import os
++    root = os.environ["ANDROID_APP_PATH"]
++    ctypes.cdll.LoadLibrary(os.path.join(root, "lib", "libgnustl_shared.so"))
++    del root
++    del os
++
+     from .ccore import *
+     core = "c"
+ except ImportError:
