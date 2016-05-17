@@ -178,8 +178,8 @@ public class PythonActivity extends Activity {
         PythonActivity.mPythonThread = pythonThread;
         pythonThread.start();
 
-        final Thread wvThread = new Thread(new WebViewLoaderMain(), "WvThread");
-        wvThread.start();
+        //final Thread wvThread = new Thread(new WebViewLoaderMain(), "WvThread");
+        //wvThread.start();
 
     }
 
