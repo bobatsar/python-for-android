@@ -2,9 +2,10 @@ from pythonforandroid.toolchain import PythonRecipe
 
 
 class PyYamlRecipe(PythonRecipe):
-    # name = geventwebsocket
-    url = 'https://pypi.python.org/packages/59/19/7279d8d457471334901978345b2c3729eeed3bad8bbcc981a8066480c66a/pyaml-15.8.2.tar.gz'
-    depends = [('python2', 'python3crystax')]
+    version = "15.8.2"
+    url = 'https://pypi.python.org/packages/source/p/pyaml/pyaml-{version}.tar.gz'
+    depends = [('python2', 'python3crystax'), "setuptools"]
     site_packages_name = 'yaml'
+    call_hostpython_via_targetpython = False
 
 recipe = PyYamlRecipe()
